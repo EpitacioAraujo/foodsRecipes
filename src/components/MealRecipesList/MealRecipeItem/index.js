@@ -1,5 +1,4 @@
 import React from 'react';
-import {Image as RNImage} from 'react-native';
 import {Text} from '@core';
 import {
   Card,
@@ -10,22 +9,24 @@ import {
   IconLegend,
   TextLegend,
 } from './styles';
+import macarronada from '@images/macarronada.png';
 
 const MealRecipeItem = ({Title, Time, Level}) => {
   return (
     <Card>
-      <Image>
-        <RNImage style={{flex: 1}} />
-      </Image>
+      <Image source={macarronada} />
+
       <Description>
         <Text>{Title}</Text>
+
         <ContainerLegend>
           <CardLegend>
-            <IconLegend />
-            <TextLegend>{Time}</TextLegend>
+            <IconLegend name="clock" />
+            <TextLegend>{Time} mim</TextLegend>
           </CardLegend>
+
           <CardLegend>
-            <IconLegend />
+            <IconLegend name="fire" />
             <TextLegend>{Level}</TextLegend>
           </CardLegend>
         </ContainerLegend>

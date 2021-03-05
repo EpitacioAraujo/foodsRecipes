@@ -1,4 +1,7 @@
 import styled from 'styled-components/native';
+import {Image as RNImage} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
 import {Text} from '@core';
 import colors from '@colors';
 
@@ -10,10 +13,12 @@ export const Card = styled.TouchableOpacity`
   flex-direction: row;
 `;
 
-export const Image = styled.View`
-  width: 30%;
+export const Image = styled(RNImage)`
+  width: 100px;
   height: 100px;
-  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  background-color: ${colors.cards};
+  border-radius: 100px;
   margin-top: -30px;
 `;
 
@@ -34,11 +39,9 @@ export const CardLegend = styled.View`
   justify-content: center;
 `;
 
-export const IconLegend = styled.View`
-  width: 20px;
-  height: 20px;
-  background-color: ${colors.primary};
-  border-radius: 150px;
+export const IconLegend = styled(Icon)`
+  color: ${colors.primary};
+  font-size: 20px;
 `;
 
 export const TextLegend = styled(Text)`

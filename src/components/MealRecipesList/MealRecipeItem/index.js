@@ -1,12 +1,11 @@
 import React from 'react';
-import {Text} from '@core';
+import {Text, Icon} from '@core';
 import {
   Card,
   Image,
   Description,
   ContainerLegend,
   CardLegend,
-  IconLegend,
   TextLegend,
 } from './styles';
 import macarronada from '@images/macarronada.png';
@@ -21,12 +20,12 @@ const MealRecipeItem = ({Title, Time, Level}) => {
 
         <ContainerLegend>
           <CardLegend>
-            <IconLegend name="clock" />
+            <Icon name="clock" />
             <TextLegend>{Time} mim</TextLegend>
           </CardLegend>
 
           <CardLegend>
-            <IconLegend name="fire" />
+            <Icon name="fire" />
             <TextLegend>{Level}</TextLegend>
           </CardLegend>
         </ContainerLegend>

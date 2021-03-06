@@ -1,26 +1,43 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
-import MyHeader from '@components/Header';
 
-import Home from '@pages/Home';
+import MyHeader from '@components/Header';
+import MyTabBar from '@components/TabBar';
+
+import Search from '@pages/Search';
 
 const Stack = createStackNavigator();
 
-function App() {
+function StackNavigator() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Search"
+        component={Search}
+        options={{
+          header: () => <MyHeader />,
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
+const Tab = createBottomTabNavigator();
+
+function TabNavigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
+      <Tab.Navigator tabBar={(props) => <MyTabBar {...props} />}>
+        <Tab.Screen
           name="Home"
-          component={Home}
-          options={{
-            header: () => <MyHeader />,
-          }}
+          component={StackNavigator}
+          options={{iconName: 'home'}}
         />
-      </Stack.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
 
-export default App;
+export default TabNavigator;

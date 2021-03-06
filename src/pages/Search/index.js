@@ -3,7 +3,7 @@ import Container from '@components/Container';
 import MealCategory from '@components/MealCategory';
 import MealRecipesList from '@components/MealRecipesList';
 
-const Home = () => {
+const Search = () => {
   return (
     <Container>
       <MealCategory />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Search;

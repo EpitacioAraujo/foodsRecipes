@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import {Image as RNImage} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {Text} from '@core';
 import colors from '@colors';
@@ -37,11 +36,6 @@ export const CardLegend = styled.View`
   margin-right: 20px;
   align-items: center;
   justify-content: center;
-`;
-
-export const IconLegend = styled(Icon)`
-  color: ${colors.primary};
-  font-size: 20px;
 `;
 
 export const TextLegend = styled(Text)`
